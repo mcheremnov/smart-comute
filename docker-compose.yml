@@ -1,0 +1,12 @@
+
+services:
+  commute-assistant:
+    build: .
+    container_name: smart-commute
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      - TZ=America/Los_Angeles
+    volumes:
+      - ./logs:/app/logs
